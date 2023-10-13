@@ -11,10 +11,10 @@ let server = http.createServer((request, response) => {
     let infoUrl = url.parse(indirizzo, true);
 
     let testoResponse = `
-        url: ${request.url},
-        host: ${request.headers.host},
-        method: ${request.method},
-        pathname: ${infoUrl.pathname},
+        url: ${request.url},<br>
+        host: ${request.headers.host},<br>
+        method: ${request.method},<br>
+        pathname: ${infoUrl.pathname},<br>
         params: ${infoUrl.search}`/*,
         headers: ${JSON.stringify(request.headers)},
         rawHeaders: ${JSON.stringify(request.rawHeaders)},
@@ -60,13 +60,28 @@ let server = http.createServer((request, response) => {
         finished: ${request.finished},
     `;*/
 
-    response.writeHead(200, {'Content-Type': 'text/plain'/*, 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+    switch (infoUrl.pathname) {
+        case '/':
+        case 'zebby':
+            sendResponse(testoResponse, infoUrl, response);
+            break;
+        default:
+            response.writeHead(404, {'Content-Type': 'text/html'});
+            response.end("Nessuna risorsa disponibile");
+            break;
+    }
+
+})
+
+function sendResponse(testoResponse, infoUrl, response) {
+    response.writeHead(200, {'Content-Type': 'text/html'/*, 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
         'Access-Control-Allow-Headers': 'Content-Type', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Max-Age': '86400',
         'Access-Control-Expose-Headers': 'Content-Type', 'Access-Control-Allow-Headers': 'X-Requested-With'*/});
-    response.write('Shut up lil nigga');
-    response.write(`${testoResponse}\n\n`);
+    response.write('Shut up lil nigga<br><br>');
+    response.write(`${testoResponse}<br><br>`);
+    response.write(`<img src="https://i1.sndcdn.com/artworks-000453415287-8wmt13-t500x500.jpg" width="100px"><br>`);
     response.end('Get a job lil nigga');
-})
+}
 server.listen(6969)
 console.log("Server sta spectando sulla porta 6969 (nice 2x)");
 

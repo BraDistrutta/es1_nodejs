@@ -15,50 +15,50 @@ let server = http.createServer((request, response) => {
         host: ${request.headers.host},<br>
         method: ${request.method},<br>
         pathname: ${infoUrl.pathname},<br>
-        params: ${infoUrl.search}`/*,
-        headers: ${JSON.stringify(request.headers)},
-        rawHeaders: ${JSON.stringify(request.rawHeaders)},
-        trailers: ${JSON.stringify(request.trailers)},
-        rawTrailers: ${JSON.stringify(request.rawTrailers)},
-        setTimeout: ${request.setTimeout},
-        socket: ${request.socket},
-        connection: ${request.connection},
-        complete: ${request.complete},
-        aborted: ${request.aborted},
-        httpVersionMajor: ${request.httpVersionMajor},
-        httpVersionMinor: ${request.httpVersionMinor},
-        upgrade: ${request.upgrade},
-        statusCode: ${request.statusCode},
-        statusMessage: ${request.statusMessage},
-        client: ${request.client},
-        _consuming: ${request._consuming},
-        _dumped: ${request._dumped},
-        _events: ${JSON.stringify(request._events)},
-        _eventsCount: ${request._eventsCount},
-        _maxListeners: ${request._maxListeners},
-        connection: ${request.connection},
-        _header: ${request._header},
-        _headers: ${JSON.stringify(request._headers)},
-        _headerNames: ${JSON.stringify(request._headerNames)},
-        _onPendingData: ${request._onPendingData},
-        _sent100: ${request._sent100},
-        _expect_continue: ${request._expect_continue},
-        req: ${request.req},
-        writable: ${request.writable},
-        _last: ${request._last},
-        upgrading: ${request.upgrading},
-        chunkedEncoding: ${request.chunkedEncoding},
-        shouldKeepAlive: ${request.shouldKeepAlive},
-        useChunkedEncodingByDefault: ${request.useChunkedEncodingByDefault},
-        sendDate: ${request.sendDate},
-        _removedConnection: ${request._removedConnection},
-        _removedContLen: ${request._removedContLen},
-        _removedTE: ${request._removedTE},
-        _contentLength: ${request._contentLength},
-        _hasBody: ${request._hasBody},
-        _trailer: ${request._trailer},
+        params: ${infoUrl.search},<br>
+        headers: ${JSON.stringify(request.headers)},<br>
+        rawHeaders: ${JSON.stringify(request.rawHeaders)},<br>
+        trailers: ${JSON.stringify(request.trailers)},<br>
+        rawTrailers: ${JSON.stringify(request.rawTrailers)},<br>
+        setTimeout: ${request.setTimeout},<br>
+        socket: ${request.socket},<br>
+        connection: ${request.connection},<br>
+        complete: ${request.complete},<br>
+        aborted: ${request.aborted},<br>
+        httpVersionMajor: ${request.httpVersionMajor},<br>
+        httpVersionMinor: ${request.httpVersionMinor},<br>
+        upgrade: ${request.upgrade},<br>
+        statusCode: ${request.statusCode},<br>
+        statusMessage: ${request.statusMessage},<br>
+        client: ${request.client},<br>
+        _consuming: ${request._consuming},<br>
+        _dumped: ${request._dumped},<br>
+        _events: ${JSON.stringify(request._events)},<br>
+        _eventsCount: ${request._eventsCount},<br>
+        _maxListeners: ${request._maxListeners},<br>
+        connection: ${request.connection},<br>
+        _header: ${request._header},<br>
+        _headers: ${JSON.stringify(request._headers)},<br>
+        _headerNames: ${JSON.stringify(request._headerNames)},<br>
+        _onPendingData: ${request._onPendingData},<br>
+        _sent100: ${request._sent100},<br>
+        _expect_continue: ${request._expect_continue},<br>
+        req: ${request.req},<br>
+        writable: ${request.writable},<br>
+        _last: ${request._last},<br>
+        upgrading: ${request.upgrading},<br>
+        chunkedEncoding: ${request.chunkedEncoding},<br>
+        shouldKeepAlive: ${request.shouldKeepAlive},<br>
+        useChunkedEncodingByDefault: ${request.useChunkedEncodingByDefault},<br>
+        sendDate: ${request.sendDate},<br>
+        _removedConnection: ${request._removedConnection},<br>
+        _removedContLen: ${request._removedContLen},<br>
+        _removedTE: ${request._removedTE},<br>
+        _contentLength: ${request._contentLength},<br>
+        _hasBody: ${request._hasBody},<br>
+        _trailer: ${request._trailer},<br>
         finished: ${request.finished},
-    `;*/
+    `;
 
     switch (infoUrl.pathname) {
         case '/':
